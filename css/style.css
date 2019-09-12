@@ -53,3 +53,25 @@ nav ul {
     width: 450px;
     height: auto;
 }
+
+section h2 {
+    /* 6.4.1 */
+    text-align: center;
+    font-size: 22px;
+    margin: 5px 0px;
+    text-transform: uppercase;
+}
+
+article h3 {
+    /* 6.4.2 */
+    text-align: left;
+    font-size: 18px;
+    margin: 10px 0px 5px 0px;
+    text-transform: capitalize;
+}
+
+article p {
+    /* 6.4.3 */
+    text-align: justify;
+    font-size: 10px;
+}
