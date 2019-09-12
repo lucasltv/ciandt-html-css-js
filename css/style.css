@@ -86,3 +86,21 @@ footer p {
     /* 6.5 */
     font-size: 10px;
 }
+
+table,
+th,
+td {
+    /* 7.4 */
+    border: 1px solid black;
+}
+
+.main-table {
+    /* 7.4 */
+    width: 500px;
+    margin: auto;
+}
+
+td {
+    /* 7.4 */
+    text-align: center;
+}
