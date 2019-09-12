@@ -104,3 +104,31 @@ td {
     /* 7.4 */
     text-align: center;
 }
+
+form {
+    /* 8.4 */
+    padding: 15px;
+}
+
+label {
+    /* 8.4 */
+    display: block;
+    text-align: left;
+}
+
+.field-group {
+    /* 8.4 */
+    display: block;
+    margin: 5px 0px;
+}
+
+input {
+    /* 8.4 */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#btn-submit {
+    /* 8.4 */
+    margin-top: 20px;
+}
