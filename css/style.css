@@ -75,3 +75,14 @@ article p {
     text-align: justify;
     font-size: 10px;
 }
+
+footer {
+    /* 6.5 */
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    /* 6.5 */
+    font-size: 10px;
+}
