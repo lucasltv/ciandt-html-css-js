@@ -196,3 +196,13 @@ function carregada(evento) {
 
 
 
+
+var button = document.querySelector("button"); //Busca pelo tipo
+var button = document.querySelector("#buttonId"); //Busca pelo ID
+var button = document.querySelector(".buttonClass"); //Busca pela classe
+var button = document.querySelectorAll("button"); //Busca TODOS pelo tipo (array)
+
+
+
+
+
