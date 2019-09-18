@@ -132,3 +132,9 @@ input {
     /* 8.4 */
     margin-top: 20px;
 }
+
+/* 10.3 */
+#removeBtn {
+    display: block;
+    margin: 0px auto;
+}
