@@ -206,3 +206,42 @@ var button = document.querySelectorAll("button"); //Busca TODOS pelo tipo (array
 
 
 
+
+//getElementById
+var myElement = document.getElementById("id01"); //JS puro
+var myElement = $("#id01"); //jQuery
+
+//getElementsByClassName
+var myElement = document.getElementsByClassName("class01"); //JS puro
+var myElement = $(".class01"); //jQuery
+
+//getElementsByTagName
+var myElement = document.getElementsByTagName("p"); //JS puro
+var myElement = $("p"); //jQuery
+
+
+//Ocultando o elemento
+myElement.style.display = "none"; //JS puro
+myElement.hide(); //jQuery (oculta)
+myElement.show(); //jQuery (mostra)
+
+//Alterando CSS
+myElement.style.fontSize = "35px";//JS puro
+myElement.css("font-size", "35px"); //jQuery
+
+//Aguardar carregamento da página
+window.addEventListener("load", funcaoPaginaCarregada); //JS puro
+$(document).ready(funcaoPaginaCarregada)  //jQuery
+
+function funcaoPaginaCarregada() {
+    alert("Página carregada completamente!");
+}
+
+
+
+
+
+
+
+
+
