@@ -1,15 +1,24 @@
-$(document).ready(function () {
-    $.get("https://jsonplaceholder.t2ypicode.com/users")
-        .done(tratarDadosRecebidos)
-        .fail(tratarErro)
+var urlApi = "https://ciandt-html-css-js.herokuapp.com/api";
 
+$(document).ready(function () {
+    buscaUsuarios();
 });
 
-function tratarDadosRecebidos(data) {
-    console.log(`LOG: tratarDadosRecebidos -> data`, data);
+function tratarDadosRecebidos(usuarios) {
+    console.log(`LOG: buscaUsuarios -> usuarios`, usuarios);
 }
 
-function tratarErro(erro) {
-    console.log(`LOG: tratarErro -> erro`, erro);
-    alert("Erro ao buscar dados!");
+function tratarErro(jqXHR, textStatus, msgErro) {
+    // debugger
+    alert("Erro API: " + msgErro);
+}
+
+//GET
+function buscaUsuarios() {
+    $.ajax({
+        url: urlApi + "/users",
+        type: "get",
+    })
+        .done(tratarDadosRecebidos)
+        .fail(tratarErro);
 }
