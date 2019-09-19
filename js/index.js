@@ -5,12 +5,6 @@ function boot() {
     var removeBtn = document.querySelector("#removeBtn");
     removeBtn.addEventListener('click', removeLoremIpsumSection);
     mostrarNotificacaoBoasVindas();
-
-    var allLinksWithMouseHoverEfectArray = document.getElementsByClassName("mouseHoverEfect");
-    for (let index = 0; index < allLinksWithMouseHoverEfectArray.length; index++) {
-        var span = allLinksWithMouseHoverEfectArray[index];
-        addMouseOverEfect(span);
-    }
 }
 
 function mostrarNotificacaoBoasVindas() {
@@ -22,13 +16,4 @@ function removeLoremIpsumSection(e) {
     loremIpsumSection.remove();
     this.remove();
     document.body.style.backgroundColor = "#FFFFFF";
-}
-
-function addMouseOverEfect(span) {
-    span.addEventListener('mouseenter', function (e) {
-        this.style.fontWeight = "bold";
-    });
-    span.addEventListener('mouseleave', function (e) {
-        this.style.fontWeight = "normal";
-    })
 }
