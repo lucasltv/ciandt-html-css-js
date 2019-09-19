@@ -247,6 +247,7 @@ function funcaoPaginaCarregada() {
 
 //GET
 function buscaUsuarios() {
+    var carregando = true; //opcional: pode ser um componente CSS de "Loading..."
     $.ajax({
         url: "https://ciandt-html-css-js.herokuapp.com/api/users",
         type: "get",
@@ -257,6 +258,9 @@ function buscaUsuarios() {
         })
         .fail(function (jqXHR, textStatus, msgErro) {
             alert("Erro API: " + msgErro);
+        })
+        .always(function () { //opcional
+            carregando = false; //sempre passa por aqui. Independente de erro/sucesso
         });
 }
 
@@ -272,6 +276,7 @@ function salvaUsuario() {
         email: "lucasv@ciandt.com",
     };
 
+    var carregando = true; //opcional: pode ser um componente CSS de "Loading..."
     $.ajax({
         url: "https://ciandt-html-css-js.herokuapp.com/api/users",
         type: "post",
@@ -282,6 +287,9 @@ function salvaUsuario() {
         })
         .fail(function (jqXHR, textStatus, msgErro) {
             alert("Erro API: " + msgErro);
+        })
+        .always(function () { //opcional
+            carregando = false; //sempre passa por aqui. Independente de erro/sucesso
         });
 }
 
@@ -296,6 +304,19 @@ tbody.append("<tr>" +
     "</tr>"
 );
 
+
+//Capturando o evento "click" do botão
+$("#button").on('click', function (event) {
+    alert('Fui clicado!');
+})
+
+
+//Capturando o evento "submit" de determinado form
+$("#form").on('submit', function (event) {
+    event.preventDefault(); //Evitar o comportamento padrão (action do form)
+    alert('Agora posso submter as informações sem sair da página!');
+    //Valida forms ... Ajax... etc...
+})
 
 
 
