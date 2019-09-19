@@ -219,6 +219,12 @@ var myElement = $(".class01"); //jQuery
 var myElement = document.getElementsByTagName("p"); //JS puro
 var myElement = $("p"); //jQuery
 
+//Alterando conteúdo HTML
+var myElement = document.querySelector(".title-h1"); //JS puro
+myElement.innerHTML = "Novo título via JS puro!";
+var myElement = $(".title-h1"); //jQuery
+myElement.text("Novo texto via jQuery!"); //Texto do elemento
+myElement.html("<a>Novo html via jQuery!</a>"); //Conteúdo HTML do elemento
 
 //Ocultando o elemento
 myElement.style.display = "none"; //JS puro
@@ -278,4 +284,18 @@ function salvaUsuario() {
             alert("Erro API: " + msgErro);
         });
 }
+
+
+
+
+tbody.append("<tr>" +
+    "<td>" + usuario.id + "</td>" +
+    "<td>" + usuario.nome + "</td>" +
+    "<td>" + usuario.telefone + "</td>" +
+    "<td>" + usuario.email + "</td>" +
+    "</tr>"
+);
+
+
+
 

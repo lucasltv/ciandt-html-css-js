@@ -5,20 +5,32 @@ $(document).ready(function () {
 });
 
 function tratarDadosRecebidos(usuarios) {
-    console.log(`LOG: buscaUsuarios -> usuarios`, usuarios);
+    var tbody = $("table tbody");
+    usuarios.forEach(usuario => {
+        tbody.append("<tr>" +
+            "<td>" + usuario.id + "</td>" +
+            "<td>" + usuario.nome + "</td>" +
+            "<td>" + usuario.telefone + "</td>" +
+            "<td>" + usuario.email + "</td>" +
+            "</tr>"
+        );
+    });
 }
 
 function tratarErro(jqXHR, textStatus, msgErro) {
-    // debugger
     alert("Erro API: " + msgErro);
 }
 
-//GET
 function buscaUsuarios() {
+    var tituloTabela = $("#table-title");
+    tituloTabela.text("Carregando...");
     $.ajax({
         url: urlApi + "/users",
         type: "get",
     })
         .done(tratarDadosRecebidos)
-        .fail(tratarErro);
+        .fail(tratarErro)
+        .always(function () {
+            tituloTabela.text("TABELA DINÂMICA");
+        })
 }
