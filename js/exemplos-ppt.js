@@ -239,9 +239,43 @@ function funcaoPaginaCarregada() {
 
 
 
+//GET
+function buscaUsuarios() {
+    $.ajax({
+        url: "https://ciandt-html-css-js.herokuapp.com/api/users",
+        type: "get",
+    })
+        .done(function (usuarios) {
+            //Exemplo: alterando o HTML de um elemento com o resultado da API
+            $("#resultado").html(usuarios); //O retorno pode ser um HTML, um texto, JSON, etc...
+        })
+        .fail(function (jqXHR, textStatus, msgErro) {
+            alert("Erro API: " + msgErro);
+        });
+}
 
 
 
+//POST
+function salvaUsuario() {
+    //OBS: o usuário deve ser uma parametro de entrada da função
+    var usuario = {
+        id: 1,
+        nome: "Lucas",
+        telefone: "123123",
+        email: "lucasv@ciandt.com",
+    };
 
-
+    $.ajax({
+        url: "https://ciandt-html-css-js.herokuapp.com/api/users",
+        type: "post",
+        data: usuario
+    })
+        .done(function (usuarios) {
+            alert("Usuário salvo com sucesso!");
+        })
+        .fail(function (jqXHR, textStatus, msgErro) {
+            alert("Erro API: " + msgErro);
+        });
+}
 
