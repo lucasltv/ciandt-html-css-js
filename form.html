@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="css/reset.css" type="text/css"> <!-- RESET: padroniza os comportamentos dos browsers -->
   <link rel="stylesheet" href="css/style.css" type="text/css"> <!-- ESTILO PRINCIPAL DO SITE -->
 
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/form.js"></script>
 
   <title>Treinamento Básico de HTML</title>
 </head>
@@ -30,8 +32,8 @@
 
   <main>
     <section>
-      <h2>Formulário</h2>
-      <form action="/recebeDados.php" method="POST">
+      <h2 id="form-title">Formulário</h2>
+      <form>
         <div class="field-group">
           <label for="id">ID</label>
           <input type="number" id="id" name="id" autofocus required>

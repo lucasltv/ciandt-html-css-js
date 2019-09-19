@@ -1,10 +1,10 @@
-var urlApi = "https://ciandt-html-css-js.herokuapp.com/api";
+var urlApi = "https://ciandt-html-css-js.herokuapp.com/api/users";
 
 $(document).ready(function () {
     buscaUsuarios();
 });
 
-function tratarDadosRecebidos(usuarios) {
+function tratarSucesso(usuarios) {
     var tbody = $("table tbody");
     usuarios.forEach(usuario => {
         tbody.append("<tr>" +
@@ -25,10 +25,10 @@ function buscaUsuarios() {
     var tituloTabela = $("#table-title");
     tituloTabela.text("Carregando...");
     $.ajax({
-        url: urlApi + "/users",
+        url: urlApi,
         type: "get",
     })
-        .done(tratarDadosRecebidos)
+        .done(tratarSucesso)
         .fail(tratarErro)
         .always(function () {
             tituloTabela.text("TABELA DINÂMICA");
